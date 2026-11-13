@@ -1,0 +1,4 @@
+kabelapp/kabel.db
+__pycache__/
+android/build/
+android/*.idsig
