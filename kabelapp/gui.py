@@ -150,7 +150,7 @@ class KabelApp(tk.Tk):
 
         ik_a = float(self.var_ik.get()) * 1000 if self.var_ik.get() else 0.0
         t_s = float(self.var_tk.get() or 0)
-        k_wert = db.kurzschluss_k(self.conn, typ["material"], "XLPE" if "N2XS" in typ["name"] or "2XY" in typ["name"] else "PVC")
+        k_wert = db.kurzschluss_k(self.conn, typ["material"], "XLPE" if ("2XS" in typ["name"] or "2XY" in typ["name"]) else "PVC")
 
         vorschlag_bel = min((q for q, i in werte.items() if i * tf * hf >= strom), default=None)
         vorschlag_sf = calc.mindestquerschnitt_spannungsfall(
